@@ -31,7 +31,10 @@ public class Alice
          Socket client = new Socket(serverName, port);
          System.out.println("Just connected to "
                       + client.getRemoteSocketAddress());
-         break1 = getInput();
+         getInput();
+         String remoteServerAddress = client.getRemoteSocketAddress().toString();
+         System.out.println("Converted remote ip address: " + remoteServerAddress);
+         getInput();
          OutputStream outToServer = client.getOutputStream();
          DataOutputStream out =
                        new DataOutputStream(outToServer);
